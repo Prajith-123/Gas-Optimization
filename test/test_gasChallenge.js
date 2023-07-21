@@ -21,6 +21,10 @@ describe("Deploy Gas Challenge Contract", () => {
   describe("Check Sum Of Array", () => {
     it("Should return 0", async () => {
       // Write test block here to check sum of array equals 0
+      await gas_contract.optimizedFunction(); // Call the optimized function
+      const sumOfArray = await gas_contract.getSumOfArray(); // Get the sum of elements in the array
+      console.log("Sum of Array:", sumOfArray.toNumber()); // Log the sum for debugging
+      expect(sumOfArray).to.equal(0);
     });
   });
 });
